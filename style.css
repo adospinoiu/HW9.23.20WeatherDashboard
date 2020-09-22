@@ -1,0 +1,11 @@
+.jumbotron{
+    margin-top: 10px;
+    border-radius: 15px;
+    
+    background-image: url("https://image.winudf.com/v2/image1/Y29tLnZtLmFuZHJvaWQubGl2ZXdlYXRoZXIuYWVnbDJfc2NyZWVuXzhfMTU2MTU4OTgzNF8wNTU/screen-8.jpg?fakeurl=1&type=.jpg");
+};
+
+.col-4{
+    background-color: cyan;
+    border-color: blueviolet;
+}
