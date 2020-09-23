@@ -37,7 +37,7 @@
             <!-- City Search Field and Search Button -->
             <div class="row">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter City Name"
+                    <input id="cityEntry" type="text" class="form-control" placeholder="Enter City Name"
                         aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
 
                     <div class="input-group-append" id="button-addon4">
@@ -56,19 +56,33 @@
         <div class="col-8">
 
             <!-- City Information and 5-Day Forecast-->
-            <div class="row">
-                <!-- City Informaion -->
-                <h1>Phoenix</h1>
+            <div id="currentWeather" class="container">
+                <!-- City Information -->
+                <h1>TODAY'S WEATHER IN:</h1>
+                
+                
+                
+                
+            <!--
+                <h1 id="city">Phoenix</h1>
 
+                <h3 id="temperature">Temp: </h3>
+
+                <h3 id="humidy">Humidity: </h3>
+
+                <h3 id="windSpeed">Wind Speed: </h3>
+
+                <h3 id="uvIndex">UV Index: </h3>
+            -->
             </div>
 
 
             <!-- 5-Day Forecast -->
-            <div class="row">
+            <div class="container">
                 <h1>5-Day Forecast</h1>
 
                 <div class="card text-white bg-primary mb-3" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 id="date" class="card-title">DATE:</h5>
                         <p id="temp" class="card-text">Temp: </p>
