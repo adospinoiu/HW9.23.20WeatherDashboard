@@ -35,7 +35,7 @@ $("#search").on("click", function () {
             $("#currentWeather").append(cityName);
             $("#currentWeather").append(icon);
 
-            
+
 
 
 
@@ -59,7 +59,7 @@ $("#search").on("click", function () {
             // Pull the Lattitude and Longitude from current weather API
             let lat = response.coord.lat;
             let lon = response.coord.lon;
-        
+
             let uvIndexURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + api_key;
 
             $.ajax({
@@ -90,18 +90,6 @@ $("#search").on("click", function () {
                 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             $.ajax({
                 url: forecastWeatherURL,
                 method: "GET"
@@ -109,6 +97,42 @@ $("#search").on("click", function () {
                 then(function (response) {
                     console.log("Forecast Weather: ");
                     console.log(response);
+
+                    let newDiv = $("<div>");
+                    newDiv.addClass("card text-white bg-primary mb-");
+                    newDiv.attr("width", "18rem")
+
+                    let futureDate = $("<h1>");
+                    futureDate = moment().add(1, 'day').format('MM/DD/YYYY');
+                    newDiv.append(futureDate);
+
+                    let newIcon = $("<img>");              
+                    newIcon.attr("src", "http://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png");
+                    newDiv.append(newIcon);
+
+
+
+                    let kelvinTemp = response.list[0].main.temp;
+                    let fahrenheitTemp = parseInt(
+                    (kelvinTemp - 273.15) * (9 / 5) + 32);
+                    
+                    let displayTemp = $("<p>");
+                    displayTemp.text("Temp: " + fahrenheitTemp + " F");
+                    newDiv.append(displayTemp);
+
+                    let displayHumidity = $("<p>");
+                    displayHumidity.text("Humidity: " + response.list[0].main.humidity + " %");
+                    newDiv.append(displayHumidity);
+
+
+                    $("#fiveDay").append(newDiv);
+
+
+
+
+
+
+
 
                 });
 
