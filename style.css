@@ -20,3 +20,17 @@
 .severe{
     background-color: red;
 }
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    width: 100px;
+}
+
+#searchHistory {
+    margin-left: 25px;
+}
