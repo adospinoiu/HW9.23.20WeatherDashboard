@@ -30,7 +30,9 @@ $(".btn").on("click", function () {
         method: "GET"
     }).
         then(function (response) {
-            
+            $("#currentWeather").empty();
+            $("#currentWeather").append("<h1>Weather Today:</h1>");
+
             // Today's Date printed to HTML
             let currentTime = moment().format("MMM Do YYYY");
             let today = $("<h1>");
@@ -104,14 +106,13 @@ $(".btn").on("click", function () {
                 then(function (response) {
                     // Empties the 'html container' to ensure things don't "stack up"
                     $("#fiveDay").empty();
+                    $("#fiveDay").append("<h1>5-Day Forecast:</h1>");
 
                     for (let i = 0; i < 5; i++) {
                         // Creates a new Div to store the 5-day forecast
                         let newDiv = $("<div>");
                         newDiv.addClass("row");
-                        //newDiv.addClass("card text-white bg-primary mb-");
-                        // newDiv.attr("width", "18rem")
-
+                       
                         // Future date
                         let futureDate = $("<h1>");
                         futureDate = moment().add((i + 1), 'day').format('MM/DD/YYYY');
@@ -141,11 +142,6 @@ $(".btn").on("click", function () {
                         $("#fiveDay").append(newDiv);
 
                     };
-
-
-
-
-
 
                 });
 
